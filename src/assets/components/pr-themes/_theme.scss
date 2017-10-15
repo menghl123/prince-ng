@@ -1,0 +1,637 @@
+@import "components";
+@mixin hover-element() {
+  border-color: $stateHoverBorderColor;
+  background: $stateHoverBgColor;
+  color: $stateHoverTextColor;
+
+  a {
+    color: $stateHoverTextColor;
+  }
+}
+
+@mixin icon-override($icon) {
+  background: none !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-indent: 0px !important;
+  text-align: center;
+
+  &:before {
+    content: $icon;
+  }
+}
+
+.pr-widget {
+  font-family:  $fontFamily;
+  font-size: $fontSize;
+
+  input, select, textarea, button {
+    font-family:  $fontFamily;
+    font-size: $fontSize;
+  }
+
+  :active {
+    outline: none;
+  }
+}
+
+.pr-widget-content {
+  border: $contentBorderWidth solid $contentBorderColor;
+  background: $contentBgColor;
+  color: $contentTextColor;
+
+  a {
+    color: $contentTextColor;
+  }
+}
+
+.pr-widget-header {
+  border: $headerBorderWidth solid $headerBorderColor;
+  background: $headerBgColor;
+  color: $headerTextColor;
+  font-weight: $headerFontWeight;
+
+  a {
+    color: $headerTextColor;
+  }
+}
+
+.pr-widget-overlay {
+  background: #666666;
+  opacity: .50;
+  filter:Alpha(Opacity=50);
+}
+
+.pr-state-default {
+  border: $stateDefaultBorderWidth solid $stateDefaultBorderColor;
+  background: $stateDefaultBgColor;
+  color: $stateDefaultTextColor;
+
+  a {
+    color: $stateDefaultTextColor ;
+  }
+}
+
+.pr-state-active {
+  border-color: $stateActiveBorderColor;
+  background: $stateActiveBgColor;
+  color: $stateActiveTextColor;
+
+  a {
+    color: $stateActiveTextColor;
+  }
+}
+
+.pr-state-highlight  {
+  border-color: $stateHighlightBorderColor;
+  background: $stateHighlightBgColor;
+  color: $stateHighlightTextColor;
+
+  a {
+    color: $stateHighlightTextColor;
+  }
+}
+
+.pr-state-focus {
+  border-color: $stateFocusBorderColor;
+  background: $stateFocusBgColor;
+  color: $stateFocusTextColor;
+
+  a {
+    color: $stateFocusTextColor;
+  }
+}
+
+.pr-state-error {
+  border-color: $stateErrorBorderColor;
+  background: $stateErrorBgColor;
+  color: $stateErrorTextColor;
+
+  a {
+    color: $stateErrorTextColor;
+  }
+}
+
+.pr-state-disabled,
+.pr-widget:disabled {
+  opacity: $disabledOpacity;
+  filter: Alpha(Opacity= $disabledOpacity * 100);
+  background-image: none;
+  cursor: default !important;
+
+  * {
+    cursor: default !important;
+  }
+}
+
+/* Forms */
+.pr-inputtext {
+  background: $inputBgColor;
+  color: $inputTextColor;
+}
+
+.pr-inputtext:enabled:hover {
+  border-color: $stateHoverBorderColor;
+}
+
+.pr-inputtext.pr-state-focus,
+.pr-inputtext:focus {
+  outline: 0 none;
+  border-color: $stateFocusBorderColor;
+  -moz-box-shadow: 0px 0px 5px $stateFocusBorderColor;
+  -webkit-box-shadow: 0px 0px 5px $stateFocusBorderColor;
+  box-shadow: 0px 0px 5px $stateFocusBorderColor;
+}
+
+.pr-inputgroup {
+  .pr-inputgroup-addon  {
+    border-color: $stateDefaultBorderColor;
+    background-color: lighten($stateDefaultBorderColor, 10%);
+    color: $inputGroupTextColor;
+
+    &:first-child {
+      border-top-left-radius: $borderRadius;
+      border-bottom-left-radius: $borderRadius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+  }
+
+  .pr-button {
+    &:first-child {
+      border-top-left-radius: $borderRadius;
+      border-bottom-left-radius: $borderRadius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+  }
+}
+
+.pr-float-label input.ng-dirty.ng-invalid ~ label {
+  color: $stateErrorTextColor;
+}
+
+.pr-autocomplete {
+  .pr-autocomplete-multiple-container:not(.pr-state-disabled) {
+    &:hover {
+      border-color: $stateHoverBorderColor;
+    }
+
+    &.pr-state-focus {
+      border-color: $stateFocusBorderColor;
+
+    }
+  }
+}
+
+.pr-chips {
+  > ul:not(.pr-state-disabled) {
+    &:hover {
+      border-color: $stateHoverBorderColor;
+    }
+
+    &.pr-state-focus {
+      border-color: $stateFocusBorderColor;
+    }
+  }
+}
+
+.pr-button:focus,
+.pr-button:enabled:hover,
+.pr-fileupload-choose:not(.pr-state-disabled):hover {
+  outline: 0 none;
+  @include hover-element();
+}
+
+.pr-button:enabled:active,
+.pr-fileupload-choose:not(.pr-state-disabled):active {
+  border-color: $stateActiveBorderColor;
+  background: $stateActiveBgColor;
+  color: $stateActiveTextColor;
+}
+
+.pr-chkbox-box:not(.pr-state-disabled):not(.pr-state-active):hover {
+  @include hover-element();
+}
+
+.pr-radiobutton-box:not(.pr-state-disabled):not(.pr-state-active):hover {
+  @include hover-element();
+}
+
+.pr-dropdown:not(.pr-state-disabled):hover {
+  @include hover-element();
+}
+
+.pr-dropdown-panel .pr-dropdown-item:not(.pr-state-highlight):hover {
+  @include hover-element();
+}
+
+.pr-listbox {
+  .pr-listbox-header {
+    .pr-listbox-filter-container {
+      .fa {
+        color: $inputTextColor;
+      }
+    }
+  }
+
+  &:not(.pr-state-disabled) {
+    .pr-listbox-item:not(.pr-state-highlight):hover {
+      @include hover-element();
+    }
+  }
+
+  &.pr-state-disabled {
+    .pr-chkbox-box:not(.pr-state-active):hover {
+      border-color: $stateDefaultBorderColor;
+      background: $stateDefaultBgColor;
+      color: $stateDefaultTextColor;
+    }
+  }
+}
+
+.pr-multiselect:not(.pr-state-disabled):hover {
+  @include hover-element();
+}
+
+.pr-multiselect-panel .pr-multiselect-item:not(.pr-state-highlight):hover {
+  @include hover-element();
+}
+
+.pr-multiselect-panel .pr-multiselect-close {
+  color: $headerIconTextColor;
+}
+
+.pr-multiselect-panel .pr-multiselect-filter-container .fa {
+  color: $inputTextColor;
+}
+
+.pr-spinner:not(.pr-state-disabled) .pr-spinner-button:enabled:hover {
+  @include hover-element();
+}
+
+.pr-spinner:not(.pr-state-disabled) .pr-spinner-button:enabled:active {
+  border-color: $stateActiveBorderColor;
+  background: $stateActiveBgColor;
+  color: $stateActiveTextColor;
+}
+
+.pr-selectbutton .pr-button:not(.pr-state-disabled):not(.pr-state-active):hover {
+  @include hover-element();
+}
+
+.pr-togglebutton:not(.pr-state-disabled):not(.pr-state-active):hover {
+  @include hover-element();
+}
+
+.pr-paginator a:not(.pr-state-disabled):not(.pr-state-active):hover {
+  @include hover-element();
+}
+
+.pr-paginator a {
+  color: $stateDefaultTextColor;
+}
+
+.pr-datatable {
+  .pr-rowgroup-header a {
+    color: $headerTextColor;
+  }
+
+  .pr-sortable-column:not(.pr-state-active):hover {
+    background: $stateHoverBgColor;
+    color: $stateHoverTextColor;
+  }
+
+  .pr-row-toggler {
+    color: $contentTextColor;
+  }
+
+  tbody.pr-datatable-hoverable-rows {
+    > tr.pr-widget-content:not(.pr-state-highlight):hover {
+      cursor: pointer;
+      background: $stateHoverBgColor;
+      color: $stateHoverTextColor;
+    }
+  }
+}
+
+.pr-orderlist {
+  .pr-orderlist-item:not(.pr-state-highlight):hover {
+    @include hover-element();
+  }
+}
+
+.pr-picklist {
+  .pr-picklist-item:not(.pr-state-highlight):hover {
+    @include hover-element();
+  }
+
+  .pr-picklist-droppoint-highlight {
+    border-color: $stateHighlightBorderColor;
+    background: $stateHighlightBgColor;
+    color: darken($contentTextColor,1%);
+
+    a {
+      color: darken($contentTextColor,1%);
+    }
+  }
+
+  .pr-picklist-highlight {
+    border-color: $stateHighlightBorderColor;
+    color: darken($contentTextColor,1%);
+
+    a {
+      color: darken($contentTextColor,1%);
+    }
+  }
+}
+
+.pr-tree {
+  &.pr-treenode-dragover {
+    border-color: $stateHighlightBorderColor;
+  }
+
+  .pr-treenode-content {
+    &.pr-treenode-selectable {
+      .pr-treenode-label:not(.pr-state-highlight):hover {
+        @include hover-element();
+      }
+    }
+
+    &.pr-treenode-dragover {
+      background: $stateActiveBgColor;
+      color: $stateActiveTextColor;
+    }
+  }
+
+  &.pr-tree-horizontal {
+    .pr-treenode-content.pr-treenode-selectable {
+      .pr-treenode-label:not(.pr-state-highlight):hover {
+        background-color: inherit;
+        color: inherit;
+      }
+
+      &:not(.pr-state-highlight):hover {
+        @include hover-element();
+      }
+    }
+  }
+}
+
+.pr-treetable {
+  .pr-treetable-row.pr-treetable-row-selectable:not(.pr-state-highlight):hover {
+    background: $stateHoverBgColor;
+    color: $stateHoverTextColor;
+  }
+}
+
+.pr-organizationchart {
+  .pr-organizationchart-node-content {
+    &.pr-organizationchart-selectable-node:not(.pr-state-highlight):hover {
+      @include hover-element();
+    }
+  }
+}
+
+.pr-accordion {
+  .pr-accordion-header:not(.pr-state-active):not(.pr-state-disabled):hover {
+    @include hover-element();
+  }
+}
+
+.pr-fieldset {
+  &.pr-fieldset-toggleable {
+    .pr-fieldset-legend:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.pr-panel {
+  .pr-panel-titlebar {
+    .pr-panel-titlebar-icon:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.pr-tabview {
+  .pr-tabview-nav {
+    li {
+      &:not(.pr-state-active):not(.pr-state-disabled):hover {
+        @include hover-element();
+      }
+    }
+  }
+}
+
+.pr-dialog {
+  .pr-dialog-titlebar-icon {
+    color: $headerTextColor;
+
+    &:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.pr-sidebar {
+  .pr-sidebar-close {
+    color: $headerTextColor;
+
+    &:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.pr-overlaypanel {
+  .pr-overlaypanel-close:hover {
+    @include hover-element();
+  }
+}
+
+.pr-inplace {
+  .pr-inplace-display:hover {
+    @include hover-element();
+  }
+}
+
+.pr-breadcrumb {
+  a {
+    color: $headerTextColor;
+  }
+}
+
+.pr-menu {
+  .pr-menuitem {
+    .pr-menuitem-link {
+      color: $contentTextColor;
+
+      &:hover {
+        @include hover-element();
+        border-color: transparent;
+      }
+    }
+
+    &.pr-menuitem-active {
+      > .pr-menuitem-link {
+        @include hover-element();
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.pr-tabmenu {
+  .pr-tabmenu-nav {
+    li:not(.pr-state-active):hover {
+      @include hover-element();
+    }
+  }
+}
+
+.pr-steps {
+  .pr-steps-item:not(.pr-state-highlight):not(.pr-state-disabled):hover {
+    @include hover-element();
+  }
+}
+
+.pr-panelmenu {
+  .pr-panelmenu-header {
+    &:not(.pr-state-active):hover {
+      @include hover-element();
+      border-color: $stateDefaultBorderColor;
+
+      a {
+        color: $stateHoverTextColor;
+      }
+    }
+
+    &.pr-state-active {
+      a {
+        color: $stateActiveTextColor;
+      }
+    }
+  }
+
+  .pr-panelmenu-content {
+    .pr-menuitem-link {
+      color: $contentTextColor;
+
+      &:hover {
+        @include hover-element();
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.pr-datepicker {
+  .pr-datepicker-header {
+    a {
+      color: $headerTextColor;
+
+      &:hover {
+        @include hover-element();
+      }
+    }
+  }
+
+  .pr-datepicker-calendar {
+    td:not(.pr-state-disabled) {
+      a:hover {
+        @include hover-element();
+      }
+    }
+  }
+}
+
+.fc {
+  .fc-toolbar {
+    .fc-prev-button {
+      .pr-icon-circle-triangle-w {
+        margin-top: .3em;
+        @include icon_override("\f053");
+      }
+    }
+
+    .fc-next-button {
+      .pr-icon-circle-triangle-e {
+        margin-top: .3em;
+        @include icon_override("\f054");
+      }
+    }
+  }
+}
+
+.pr-rating {
+  a {
+    color: $inputTextColor;
+  }
+}
+
+.pr-organizationchart {
+  .pr-organizationchart-line-down {
+    background-color: darken($contentBorderColor, 10%);
+  }
+
+  .pr-organizationchart-line-left {
+    border-right: 1px solid darken($contentBorderColor, 10%);
+  }
+
+  .pr-organizationchart-line-right {
+
+  }
+
+  .pr-organizationchart-line-top {
+    border-top: 1px solid darken($contentBorderColor, 10%);
+  }
+
+  .pr-organizationchart-node-content {
+    border-color: darken($contentBorderColor, 10%);
+  }
+
+  .pr-organizationchart-node-content .pr-node-toggler {
+    color: darken($contentBorderColor, 10%);
+  }
+}
+
+/* Validation */
+.pr-inputtext.ng-dirty.ng-invalid,
+p-dropdown.ng-dirty.ng-invalid > .pr-dropdown,
+p-autocomplete.ng-dirty.ng-invalid > .pr-autocomplete > .pr-inputtext,
+p-calendar.ng-dirty.ng-invalid > .pr-calendar > .pr-inputtext,
+p-chips.ng-dirty.ng-invalid > .pr-inputtext,
+p-inputmask.ng-dirty.ng-invalid > .pr-inputtext,
+p-checkbox.ng-dirty.ng-invalid .pr-chkbox-box,
+p-radiobutton.ng-dirty.ng-invalid .pr-radiobutton-box,
+p-inputswitch.ng-dirty.ng-invalid .pr-inputswitch,
+p-listbox.ng-dirty.ng-invalid .pr-inputtext,
+p-multiselect.ng-dirty.ng-invalid > .pr-multiselect,
+p-spinner.ng-dirty.ng-invalid > .pr-inputtext,
+p-selectbutton.ng-dirty.ng-invalid .pr-button,
+p-togglebutton.ng-dirty.ng-invalid .pr-button {
+  border-bottom-color: $invalidInputBorderColor;
+}
+
+/* Cornering */
+.pr-corner-tl { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; }
+.pr-corner-tr { -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; }
+.pr-corner-bl { -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; }
+.pr-corner-br { -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
+.pr-corner-top { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; }
+.pr-corner-bottom { -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
+.pr-corner-right {  -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
+.pr-corner-left { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; }
+.pr-corner-all { -moz-border-radius: $borderRadius; -webkit-border-radius: $borderRadius; border-radius: $borderRadius; }

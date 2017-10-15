@@ -1,0 +1,220 @@
+/* Button */
+.pr-button {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  margin-right: .1em;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+  zoom: 1;
+  overflow: visible;/* overflow属性在IE中删除额外的宽度*/
+}
+
+.pr-button-icon-only{
+  width: 2em;
+}
+
+/* button text elment*/
+.pr-button .pr-button-text{
+  display: block;
+  line-height: normal;
+}
+
+.pr-button-text-only .pr-button-text{
+  padding: .25em 1em;
+}
+
+.pr-button-icon-only .pr-button-text {
+  padding: .25em;
+  text-indent: -9999999px;
+}
+
+.pr-button-text-icon-left .pr-button-text {
+  padding: .25em 1em .25em 2.1em;
+}
+
+.pr-button-text-icon-right .pr-button-text {
+  padding: .25em 2.1em .25em 1em;
+}
+/*button icon element(s) */
+.pr-button-icon-only .fa,
+.pr-button-text-icon-left .fa,
+.pr-button-text-icon-right .fa {
+  position: absolute;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.pr-button-icon-only .fa {
+  top: 50%;
+  left: 50%;
+  margin-top: -.5em;
+  margin-left: -.6em;
+}
+
+.pr-button-icon-left {
+  left: .5em;
+}
+
+.pr-button-icon-right {
+  right: .5em;
+}
+
+/*button sets*/
+.pr-buttonset .pr-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* workarounds */
+button.pr-button::-moz-focus-inner {
+  border: 0; padding: 0; /* Firefox浏览器消除额外的内间距 */
+}
+/** Fluid **/
+.pr-fluid .pr-button {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+}
+
+.pr-fluid .pr-button-text-icon-left .pr-button-text,
+.pr-fluid .pr-button-text-icon-right .pr-button-text {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/** ButtonSet **/
+.pr-fluid .pr-buttonset {
+  width: 100%;
+}
+
+.pr-fluid .pr-buttonset.pr-buttonset-1 .pr-button {width: 100%;}
+.pr-fluid .pr-buttonset.pr-buttonset-2 .pr-button {width: 50%;}
+.pr-fluid .pr-buttonset.pr-buttonset-3 .pr-button {width: 33.3%;}
+.pr-fluid .pr-buttonset.pr-buttonset-4 .pr-button {width: 25%;}
+.pr-fluid .pr-buttonset.pr-buttonset-5 .pr-button {width: 20%;}
+.pr-fluid .pr-buttonset.pr-buttonset-6 .pr-button {width: 16.6%;}
+
+@media (max-width: 640px) {
+  .pr-fluid .pr-buttonset.pr-buttonset-1 .pr-button,
+  .pr-fluid .pr-buttonset.pr-buttonset-2 .pr-button,
+  .pr-fluid .pr-buttonset.pr-buttonset-3 .pr-button,
+  .pr-fluid .pr-buttonset.pr-buttonset-4 .pr-button,
+  .pr-fluid .pr-buttonset.pr-buttonset-5 .pr-button,
+  .pr-fluid .pr-buttonset.pr-buttonset-6 .pr-button {
+    width: 100%;
+  }
+}
+/* Severity Buttons */
+/* Secondary */
+.pr-button.pr-button-secondary.pr-state-default,
+.pr-splitbutton.pr-button-secondary .pr-button.pr-state-default {
+  background-color: $buttonSecondaryBGColor;
+  border-color: $buttonSecondaryBDColor;
+  color: $buttonSecondaryColor;
+}
+
+.pr-button.pr-button-secondary:enabled:hover,
+.pr-button.pr-button-secondary:focus,
+.pr-splitbutton.pr-button-secondary .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-secondary .pr-button:focus {
+  background-color: $buttonSecondaryBGColorFocusing;
+  border-color: $buttonSecondaryBDColor;
+  color: $buttonSecondaryColor;
+}
+
+.pr-button.pr-button-secondary:enabled:active,
+.pr-splitbutton.pr-button-secondary .pr-button:enabled:active  {
+  background-color: $buttonSecondaryBGColorActive;
+  border-color: $buttonSecondaryBDColor;
+  color: $buttonSecondaryColor;;
+}
+
+/* Success */
+.pr-button.pr-button-success.pr-state-default,
+.pr-splitbutton.pr-button-success .pr-button.pr-state-default {
+  background-color: $buttonSuccessBGColor;
+  border-color: $buttonSuccessBDColor;
+  color: $buttonSuccessColor;
+}
+
+.pr-button.pr-button-success:enabled:hover,
+.pr-button.pr-button-success:focus,
+.pr-splitbutton.pr-button-success .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-success .pr-button:focus {
+  background-color: $buttonSuccessBGColorFocusing;
+  border-color: $buttonSuccessBDColor;
+}
+
+.pr-button.pr-button-success:enabled:active,
+.pr-splitbutton.pr-button-success .pr-button:enabled:active {
+  background-color: $buttonSuccessBGColor;
+  border-color: $buttonSuccessBDColor;
+}
+
+/* Info */
+.pr-button.pr-button-info.pr-state-default,
+.pr-splitbutton.pr-button-info .pr-button.pr-state-default {
+  background-color: $buttonInfoBGColor;
+  border-color: $buttonInfoBDColor;
+  color: $buttonInfoColor;
+}
+
+.pr-button.pr-button-info:enabled:hover,
+.pr-button.pr-button-info:focus,
+.pr-splitbutton.pr-button-info .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-info .pr-button:focus {
+  background-color: $buttonInfoBGColorFocusing;
+  border-color: $buttonInfoBDColor;
+}
+
+.pr-button.pr-button-info:enabled:active,
+.pr-splitbutton.pr-button-info .pr-button:enabled:active {
+  background-color: $buttonInfoBGColorActive;
+  border-color: $buttonInfoBDColor;
+}
+
+/* Warning */
+.pr-button.pr-button-warning.pr-state-default,
+.pr-splitbutton.pr-button-warning .pr-button.pr-state-default {
+  background-color: $buttonWarningBGColor;
+  border-color: $buttonWarningBDColor;
+  color: $buttonWarningColor;
+}
+
+.pr-button.pr-button-warning:enabled:hover,
+.pr-button.pr-button-warning:focus,
+.pr-splitbutton.pr-button-warning .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-warning .pr-button:focus {
+  background-color: $buttonWarningBGColorFocusing;
+  border-color: $buttonWarningBDColor;
+}
+
+.pr-button.pr-button-warning:enabled:active,
+.pr-splitbutton.pr-button-warning .pr-button:enabled:active {
+  background-color: $buttonWarningBGColorActive;
+  border-color: $buttonWarningBDColor;
+}
+
+/* Danger */
+.pr-button.pr-button-danger.pr-state-default,
+.pr-splitbutton.pr-button-danger .pr-button.pr-state-default {
+  background-color: $buttonDangerBGColor;
+  border-color: $buttonDangerBDColor;
+  color: $buttonDangerColor;
+}
+
+.pr-button.pr-button-danger:enabled:hover,
+.pr-button.pr-button-danger:focus,
+.pr-splitbutton.pr-button-danger .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-danger .pr-button:focus {
+  background-color: $buttonDangerBGColorFocusing;
+  border-color: $buttonDangerBDColor;
+}
+
+.pr-button.pr-button-danger:enabled:active,
+.pr-splitbutton.pr-button-danger .pr-button:enabled:active {
+  background-color: $buttonDangerBGColorActive;
+  border-color: $buttonDangerBDColor;
+}

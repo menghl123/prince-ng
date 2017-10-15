@@ -1,0 +1,112 @@
+/* Severity Buttons */
+/* Secondary */
+.pr-button.pr-button-secondary.pr-state-default,
+.pr-splitbutton.pr-button-secondary .pr-button.pr-state-default {
+  background-color: #ffffff;
+  border-color: #cccccc;
+  color: #373a3c;
+}
+
+.pr-button.pr-button-secondary:enabled:hover,
+.pr-button.pr-button-secondary:focus,
+.pr-splitbutton.pr-button-secondary .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-secondary .pr-button:focus {
+  background-color: #f2f2f2;
+  border-color: #cccccc;
+  color: #373a3c;
+}
+
+.pr-button.pr-button-secondary:enabled:active,
+.pr-splitbutton.pr-button-secondary .pr-button:enabled:active  {
+  background-color: #e6e6e6;
+  border-color: #cccccc;
+  color: #373a3c;
+}
+
+/* Success */
+.pr-button.pr-button-success.pr-state-default,
+.pr-splitbutton.pr-button-success .pr-button.pr-state-default {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  color: #ffffff;
+}
+
+.pr-button.pr-button-success:enabled:hover,
+.pr-button.pr-button-success:focus,
+.pr-splitbutton.pr-button-success .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-success .pr-button:focus {
+  background-color: #4cae4c;
+  border-color: #5cb85c;
+}
+
+.pr-button.pr-button-success:enabled:active,
+.pr-splitbutton.pr-button-success .pr-button:enabled:active {
+  background-color: #449d44;
+  border-color: #5cb85c;
+}
+
+/* Info */
+.pr-button.pr-button-info.pr-state-default,
+.pr-splitbutton.pr-button-info .pr-button.pr-state-default {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+  color: #ffffff;
+}
+
+.pr-button.pr-button-info:enabled:hover,
+.pr-button.pr-button-info:focus,
+.pr-splitbutton.pr-button-info .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-info .pr-button:focus {
+  background-color: #46b8da;
+  border-color: #5bc0de;
+}
+
+.pr-button.pr-button-info:enabled:active,
+.pr-splitbutton.pr-button-info .pr-button:enabled:active {
+  background-color: #31b0d5;
+  border-color: #5bc0de;
+}
+
+/* Warning */
+.pr-button.pr-button-warning.pr-state-default,
+.pr-splitbutton.pr-button-warning .pr-button.pr-state-default {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+  color: #ffffff;
+}
+
+.pr-button.pr-button-warning:enabled:hover,
+.pr-button.pr-button-warning:focus,
+.pr-splitbutton.pr-button-warning .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-warning .pr-button:focus {
+  background-color: #eea236;
+  border-color: #f0ad4e;
+}
+
+.pr-button.pr-button-warning:enabled:active,
+.pr-splitbutton.pr-button-warning .pr-button:enabled:active {
+  background-color: #ec971f;
+  border-color: #f0ad4e;
+}
+
+/* Danger */
+.pr-button.pr-button-danger.pr-state-default,
+.pr-splitbutton.pr-button-danger .pr-button.pr-state-default {
+  background-color: #d9534f;
+  border-color: #d9534f;
+  color: #ffffff;
+}
+
+.pr-button.pr-button-danger:enabled:hover,
+.pr-button.pr-button-danger:focus,
+.pr-splitbutton.pr-button-danger .pr-button:enabled:hover,
+.pr-splitbutton.pr-button-danger .pr-button:focus {
+  background-color: #d43f3a;
+  border-color: #d9534f;
+}
+
+.pr-button.pr-button-danger:enabled:active,
+.pr-splitbutton.pr-button-danger .pr-button:enabled:active {
+  background-color: #c9302c;
+  border-color: #d9534f;
+}

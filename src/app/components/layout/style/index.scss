@@ -1,0 +1,124 @@
+// Layout
+$layout-body-background: #ececec;
+$layout-header-background: #404040;
+$layout-header-height: 64px;
+$layout-header-padding: 0 50px;
+$layout-footer-padding: 24px 50px;
+$layout-sider-background: $layout-header-background;
+$layout-trigger-height: 48px;
+$layout-trigger-background: #000;
+$layout-trigger-color: #fff;
+$layout-zero-trigger-width: 36px;
+$layout-zero-trigger-height: 42px;
+.pr-layout {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  background: $layout-body-background;
+
+  .pr-layout-header,
+  .pr-layout-footer {
+    flex: 0 0 auto;
+  }
+
+  .pr-layout-header {
+    background: $layout-header-background;
+    padding: $layout-header-padding;
+    height: $layout-header-height;
+    line-height: $layout-header-height;
+  }
+
+  .pr-layout-footer {
+    padding: $layout-footer-padding;
+    color: #000;
+    font-size: 12px;
+  }
+
+  .pr-layout-content {
+    flex: auto;
+  }
+
+  .pr-layout-sider {
+    transition: all .15s cubic-bezier(0.645, 0.045, 0.355, 1);;
+    position: relative;
+    background: $layout-sider-background;
+
+    /* fix firefox can't set width smaller than content on flex item */
+    min-width: 0;
+
+    .pr-layout-has-trigger {
+      padding-bottom: $layout-trigger-height;
+    }
+
+    .pr-layout-right {
+      order: 1;
+    }
+
+    .pr-layout-trigger {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      bottom: 0;
+      cursor: pointer;
+      height: $layout-trigger-height;
+      line-height: $layout-trigger-height;
+      background: $layout-trigger-background;
+      color: $layout-trigger-color;
+    }
+
+    .pr-layout-zero-width {
+      & > * {
+        overflow: hidden;
+      }
+
+      .pr-layout-trigger {
+        position: absolute;
+        top: $layout-header-height;
+        right: -$layout-zero-trigger-width;
+        text-align: center;
+        width: $layout-zero-trigger-width;
+        height: $layout-zero-trigger-height;
+        line-height: $layout-zero-trigger-height;
+        background: $layout-sider-background;
+        color: #fff;
+        font-size: $layout-zero-trigger-width / 2;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background .3s ease;
+
+        &:hover {
+          background: tint($layout-sider-background, 10%);
+        }
+      }
+    }
+  }
+}
+
+.pr-layout-has-sider {
+  flex-direction: row;
+  > .pr-layout,
+  > .pr-layout-content {
+    overflow-x: hidden;
+  }
+}
+.pr-layout-sider-zero-width-trigger{
+  position: absolute;
+  top: 64px;
+  right: -36px;
+  text-align: center;
+  width: 36px;
+  height: 42px;
+  line-height: 42px;
+  background: #404040;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+.pr-layout-sider-zero-width-trigger:hover {
+  background: #535353;
+}
+.pr-layout-sider-zero-width>* {
+  overflow: hidden;
+}
